@@ -4,7 +4,7 @@
     {
         public int Numero { get; set; }
         public double Costo { get; set; }
-        private string NombreCliente { get; set; }
+        public string NombreCliente { get; set; }
         public int NumeroCamas { get; set; }
         public bool Disponibilidad { get; set; }
 
@@ -31,13 +31,20 @@
             return true;
         }
 
-        public void AsignarCliente()
+        public void AsignarCliente(int numero, double costo, string nombreCliente, bool disponibilidad)
         {
-
+            Console.WriteLine($"La habitacion {numero} se asigno a {nombreCliente} a un costo de {costo}");
+            disponibilidad = false;
         }
     }
 
-    public class Suite : Habitacion 
+    public class HabitacionDoble : Habitacion
+    {
+        public bool VistaAlMar { get; set; }
+
+    }
+
+    public class Suite : HabitacionDoble 
     {
         public bool Jacuzzi { get; set; }
         public int CantidadHabitaciones { get; set; }
