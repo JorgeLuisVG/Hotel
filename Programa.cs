@@ -6,12 +6,15 @@ using System.Threading.Tasks;
 
 namespace SistemaHotel
 {
-    internal class Programa : HabitacionDeluxe
+    internal class Programa : Habitacion
     {
         public List<Habitacion> habitaciones;
         
-        
-
+        public Programa(int numero, double costo, string nombreCliente, int numeroCamas, bool disponibilidad)
+            : base(numero, costo, nombreCliente,numeroCamas,disponibilidad)
+        {
+            habitaciones = new List<Habitacion>();
+        }
         static void NuevaHabitacionSimple(int numero, double costo, int numeroCamas, bool disponibilidad, string tipo)
         {
             Console.WriteLine("Ingrese el numero de la habitacion");
