@@ -42,6 +42,7 @@
     {
         public bool VistaAlMar { get; set; }
 
+
     }
 
     public class Suite : HabitacionDoble 
