@@ -38,21 +38,43 @@
         }
     }
 
+    public class HabitacionSimple : Habitacion
+    {
+        public bool Baño { get; set; }
+        public HabitacionSimple(int numero, double costo, string nombreCliente, int numeroCamas, bool disponibilidad, bool baño)
+            : base(numero, costo, nombreCliente, numeroCamas, disponibilidad)
+        {
+            Baño = baño;
+        }
+    }
+
     public class HabitacionDoble : Habitacion
     {
         public bool VistaAlMar { get; set; }
-
-
+        public HabitacionDoble(int numero, double costo, string nombreCliente, int numeroCamas, bool disponibilidad, bool vistaAlMar)
+            : base(numero, costo, nombreCliente, numeroCamas, disponibilidad)
+        {
+            VistaAlMar = vistaAlMar;
+        }
     }
 
-    public class Suite : HabitacionDoble 
+    public class Suite : Habitacion 
     {
         public bool Jacuzzi { get; set; }
-        public int CantidadHabitaciones { get; set; }
+        public Suite(int numero, double costo, string nombreCliente, int numeroCamas, bool disponibilidad, bool jacuzzi)
+            : base(numero, costo, nombreCliente, numeroCamas, disponibilidad)
+        {
+            Jacuzzi = jacuzzi;
+        }
     }
 
-    public class HabitacionDeluxe : Suite
+    public class HabitacionDeluxe : Habitacion
     {
         public bool Comidas { get; set; }
+        public HabitacionDeluxe(int numero, double costo, string nombreCliente, int numeroCamas, bool disponibilidad, string tipo, bool comidas)
+            : base(numero, costo,nombreCliente, numeroCamas, disponibilidad)
+        {
+            Comidas = comidas;
+        }
     }
 }

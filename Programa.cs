@@ -8,10 +8,11 @@ namespace SistemaHotel
 {
     internal class Programa : HabitacionDeluxe
     {
-        public List<Habitacion> habitaciones = new List<Habitacion>();
-        public List<Suite> suits = new List<Suite>();
+        public List<Habitacion> habitaciones;
+        
+        
 
-        static void NuevaHabitacionSimple(int numero, double costo, int numeroCamas, bool disponibilidad)
+        static void NuevaHabitacionSimple(int numero, double costo, int numeroCamas, bool disponibilidad, string tipo)
         {
             Console.WriteLine("Ingrese el numero de la habitacion");
             numero = Convert.ToInt32(Console.ReadLine());
@@ -19,16 +20,14 @@ namespace SistemaHotel
             costo = Convert.ToDouble(Console.ReadLine());
             Console.WriteLine("Ingrese el numero de camas que tiene la habitacion");
             numeroCamas = Convert.ToInt32(Console.ReadLine());
+            Console.WriteLine("Ingrese el tipo de habitacion que es");
+            tipo = Console.ReadLine();
 
             disponibilidad = true;
         }
 
-        static void NuevaSuite(int numero, double costo, int numeroCamas, bool disponibilidad)
+        static void Menu()
         {
-        
         }
-
-
-
     }
 }
